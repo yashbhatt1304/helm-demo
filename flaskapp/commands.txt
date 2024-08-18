@@ -3,3 +3,12 @@ helm create flaskapp
 
 --------Run the below command from the root folder of helm to create the package which can be shared with anyone.---------
 helm package flaskapp
+
+------Deploying------
+whenever deploying make sure minikube is running and kubectl is connected
+
+Install the app by running below command
+helm install flaskapp flaskapp-0.1.0.tgz 
+
+generate the index.html file using S3 bucket URL(create a S3 bucket)
+helm repo index . --url https://yashhelm.s3.ap-northeast-3.amazonaws.com/
