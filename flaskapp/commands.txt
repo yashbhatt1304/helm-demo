@@ -1,1 +1,5 @@
+----------Create helm app-----------
 helm create flaskapp
+
+--------Run the below command from the root folder of helm to create the package which can be shared with anyone.---------
+helm package flaskapp
