@@ -1,8 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "{{ .Values.app.name }}-deplyment"
+  name: {{ .Values.app.name }}-deplyment
 spec:
+  replicas: {{ .Values.app.replicas }}
   selector:
     matchLabels:
       app: {{ .Values.app.name }}
@@ -13,7 +14,7 @@ spec:
     spec:
       containers:
       - name: {{ .Values.app.containerName }}
-        image: "{{ .Values.app.image }}:{{ .Values.app.tag }}"
+        image: {{ .Values.app.image }}:{{ .Values.app.tag }}
         resources:
           limits:
             memory: "128Mi"
